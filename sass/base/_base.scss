@@ -1,0 +1,40 @@
+*,
+*::after,
+*::before {
+    /* universal selector*/
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+
+
+    @include respond(tab-land) {
+        font-size: 56.25%; // 1rem=8px  8/16=56.25
+    }
+
+    @include respond(tab-port) {
+        font-size: 50%; // 1rem=8px 8/16=50
+    }
+
+    @include respond(big-desk) {
+        //larger one then small one but this is min  width so at the bottm
+        font-size: 75%; //1 rem 12/16= 75
+    }
+
+}
+
+body {
+    box-sizing: border-box;
+    padding: 3rem;
+    @include respond(tab-port) {
+        padding: 0;
+    }
+}
+
+::selection{
+    background-color: $color-primary;
+    color: $color-white;
+}
